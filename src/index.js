@@ -45,9 +45,9 @@ const BookList = () => {
   );
 };
 
-const Book = (Props) => {
+const Book = ({ image, title, Author }) => {
   // you destruct the object using the const
-  const { image, title, Author } = props;
+  // const { image, title, Author } = props;
   return (
     <article className="book-item">
       <img

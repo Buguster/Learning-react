@@ -4,28 +4,32 @@ import ReactDom from 'react-dom'
 // CSS the . means that the file is in the same folder
 import './index.css'
 
-const title = "Soul Book";
-const Author = "OLIVIA WILSON";
-const image = 'https://marketplace.canva.com/EAFaQMYuZbo/1/0/1003w/canva-brown-rusty-mystery-novel-book-cover-hG1QhA7BiBU.jpg'
+const first_book = {
+  title :"Soul Book",
+  Author:"OLIVIA WILSON",
+  image:'https://marketplace.canva.com/EAFaQMYuZbo/1/0/1003w/canva-brown-rusty-mystery-novel-book-cover-hG1QhA7BiBU.jpg'
+}
+
 const BookList  = () => {
   return (
     <section className='book'>
-      <Book/>
-      <Book/>
-      <Book/>
-      <Book/>
-      <Book/>
-      <Book/>
+      <Book 
+        image={first_book.image} 
+        title={first_book.title} 
+        Author={first_book.Author}
+      />
+      <Book 
+        title="random title" 
+      />
     </section>
   )
 }
 
-
-const Book = () => {
+const Book = (Props) => {
   return (
   <article className='book-item'>
     <img
-      src= {image}
+      src= {Props.image}
       alt='coverbook'
       style={{
         width: '200px', // Set a fixed width
@@ -34,8 +38,9 @@ const Book = () => {
         borderRadius: '8px',
       }}
     />
-    <h1>{title}</h1>
-    <h4>{Author.toLowerCase()}</h4>
+    <h1>{Props.title}</h1>
+    <h4>{Props.Author}</h4>
+
   </article>
   )
 }

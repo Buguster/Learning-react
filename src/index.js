@@ -4,11 +4,41 @@ import ReactDom from 'react-dom'
 const BookList  = () => {
   return (
     <section>
-      this is a book list
-  
+      <Book/>
+      <Book/>
+      <Book/>
+      <Author/>
     </section>
   )
 }
+const Book = () => {
+  return <article>
+    <Title/>
+    <Image></Image>
+    <Author/>
+  </article>
+}
+
+const Image = () => (
+  <img
+     src='https://marketplace.canva.com/EAFaQMYuZbo/1/0/1003w/canva-brown-rusty-mystery-novel-book-cover-hG1QhA7BiBU.jpg'
+     alt='coverbook'
+     style={{
+       width: '200px', // Set a fixed width
+       height: 'auto',
+       boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.1)',
+       borderRadius: '8px',
+     }}
+  />
+ );
+ 
+
+const Title = () => (
+  <h5>I love you to the mooon and back</h5>
+)
+const Author = () => (
+  <h4>Me</h4>
+)
 
 const  Greeting = () =>{
   return (

@@ -1,20 +1,25 @@
 import React from 'react'
 import ReactDom from 'react-dom'
 
+// CSS the . means that the file is in the same folder
+import './index.css'
+
 const BookList  = () => {
   return (
-    <section>
+    <section className='book'>
       <Book/>
       <Book/>
       <Book/>
-      <Author/>
+      <Book/>
+      <Book/>
+      <Book/>
     </section>
   )
 }
 const Book = () => {
-  return <article>
-    <Title/>
+  return <article className='book-item'>
     <Image></Image>
+    <Title/>
     <Author/>
   </article>
 }
@@ -34,10 +39,10 @@ const Image = () => (
  
 
 const Title = () => (
-  <h5>I love you to the mooon and back</h5>
+  <h5>Book Title: SOUL</h5>
 )
 const Author = () => (
-  <h4>Me</h4>
+  <h4>OLIVIA WILSON</h4>
 )
 
 const  Greeting = () =>{

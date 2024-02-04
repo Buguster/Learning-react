@@ -17,33 +17,25 @@ const BookList  = () => {
   )
 }
 const Book = () => {
-  return <article className='book-item'>
-    <Image></Image>
-    <Title/>
-    <Author/>
+  const Author = "OLIVIA WILSON";
+  const title = "Soul Book";
+  return (
+  <article className='book-item'>
+    <img
+      src='https://marketplace.canva.com/EAFaQMYuZbo/1/0/1003w/canva-brown-rusty-mystery-novel-book-cover-hG1QhA7BiBU.jpg'
+      alt='coverbook'
+      style={{
+        width: '200px', // Set a fixed width
+        height: 'auto',
+        boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.1)',
+        borderRadius: '8px',
+      }}
+    />
+    <h1>{title}</h1>
+    <h4>{Author.toLowerCase()}</h4>
   </article>
+  )
 }
-
-const Image = () => (
-  <img
-     src='https://marketplace.canva.com/EAFaQMYuZbo/1/0/1003w/canva-brown-rusty-mystery-novel-book-cover-hG1QhA7BiBU.jpg'
-     alt='coverbook'
-     style={{
-       width: '200px', // Set a fixed width
-       height: 'auto',
-       boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.1)',
-       borderRadius: '8px',
-     }}
-  />
- );
- 
-
-const Title = () => (
-  <h5>Book Title: SOUL</h5>
-)
-const Author = () => (
-  <h4>OLIVIA WILSON</h4>
-)
 
 const  Greeting = () =>{
   return (

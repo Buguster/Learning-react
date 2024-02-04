@@ -24,3 +24,9 @@ body{
     }
 }
 
+.book-item {
+    /*background:rgb(110, 104, 76);*/
+    background: #f1f1f1;
+    border-radius: 1rem;
+    padding: 1rem 2rem;
+}

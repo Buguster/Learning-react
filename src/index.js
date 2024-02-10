@@ -45,13 +45,13 @@ const BookList = () => {
   );
 };
 
-const Book = (props) => {
+const Book = ({ image, title, Author }) => {
   // you destruct the object using the const
   // const { image, title, Author } = props;
   return (
     <article className="book-item">
       <img
-        src={props.image}
+        src={image}
         alt="coverbook"
         style={{
           width: "200px",
@@ -60,8 +60,8 @@ const Book = (props) => {
           borderRadius: "8px",
         }}
       />
-      <h1>{props.title}</h1>
-      <h4>{props.Author}</h4>
+      <h1>{title}</h1>
+      <h4>{Author}</h4>
     </article>
   );
 };

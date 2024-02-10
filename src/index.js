@@ -30,13 +30,23 @@ const BookList = () => {
         image={first_book.image}
         title={first_book.title}
         Author={first_book.Author}
-      />
+      >
+        <p>
+          lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem
+          lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem
+          lorem lorem lorem lorem lorem lorem
+        </p>
+      </Book>
       <Book
         image={second_book.image}
         title={second_book.title}
         Author={second_book.Author}
       />
-      <Book image={third_book.image} />
+      <Book
+        image={third_book.image}
+        title={third_book.title}
+        Author={third_book.Author}
+      />
     </section>
   );
 };
@@ -58,6 +68,7 @@ const Book = (props) => {
       />
       <h1>{props.title}</h1>
       <h4>{props.Author}</h4>
+      {props.children}
     </article>
   );
 };

@@ -4,60 +4,68 @@ import ReactDom from "react-dom";
 // CSS the . means that the file is in the same folder
 import "./index.css";
 
-const first_book = {
-  title: "Soul Book",
-  Author: "OLIVIA WILSON",
-  image:
-    "https://marketplace.canva.com/EAFaQMYuZbo/1/0/1003w/canva-brown-rusty-mystery-novel-book-cover-hG1QhA7BiBU.jpg",
-};
+const books = [
+  {
+    id: 1,
+    title: "Soul Book",
+    Author: "OLIVIA WILSON",
+    image:
+      "https://marketplace.canva.com/EAFaQMYuZbo/1/0/1003w/canva-brown-rusty-mystery-novel-book-cover-hG1QhA7BiBU.jpg",
+  },
 
-const second_book = {
-  title: "Soul Book",
-  Author: "OLIVIA WILSON",
-  image: "https://i.imgur.com/g8kAD8n.jpg",
-};
+  {
+    id: 2,
+    title: "Psychology of money",
+    Author: "OLIVIA WILSON",
+    image: "https://i.imgur.com/g8kAD8n.jpg",
+  },
 
-const third_book = {
-  title: "Soul Book",
-  Author: "OLIVIA WILSON",
-  image: "https://content.wepik.com/statics/10345869/preview-page0.jpg",
-};
+  {
+    id: 3,
+    title: "Startegy",
+    Author: "OLIVIA WILSON",
+    image: "https://content.wepik.com/statics/10345869/preview-page0.jpg",
+  },
+  {
+    id: 4,
+    title: "Soul Book",
+    Author: "OLIVIA WILSON",
+    image:
+      "https://marketplace.canva.com/EAFaQMYuZbo/1/0/1003w/canva-brown-rusty-mystery-novel-book-cover-hG1QhA7BiBU.jpg",
+  },
+
+  {
+    id: 5,
+    title: "Psychology of money",
+    Author: "OLIVIA WILSON",
+    image: "https://i.imgur.com/g8kAD8n.jpg",
+  },
+
+  {
+    id: 6,
+    title: "Startegy",
+    Author: "OLIVIA WILSON",
+    image: "https://content.wepik.com/statics/10345869/preview-page0.jpg",
+  },
+];
 
 const BookList = () => {
   return (
     <section className="book">
-      <Book
-        image={first_book.image}
-        title={first_book.title}
-        Author={first_book.Author}
-      >
-        <p>
-          lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem
-          lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem
-          lorem lorem lorem lorem lorem lorem
-        </p>
-      </Book>
-      <Book
-        image={second_book.image}
-        title={second_book.title}
-        Author={second_book.Author}
-      />
-      <Book
-        image={third_book.image}
-        title={third_book.title}
-        Author={third_book.Author}
-      />
+      {books.map((book) => {
+        const { image, title, Author } = book;
+        return <Book key={book.id} book={book}></Book>;
+      })}
     </section>
   );
 };
 
 const Book = (props) => {
-  // you destruct the object using the const
-  // const { image, title, Author } = props;
+  const { image, title, Author } = props.book;
   return (
     <article className="book-item">
       <img
-        src={props.image}
+        src={image}
         alt="coverbook"
         style={{
           width: "200px",
@@ -66,9 +74,8 @@ const Book = (props) => {
           borderRadius: "8px",
         }}
       />
-      <h1>{props.title}</h1>
-      <h4>{props.Author}</h4>
-      {props.children}
+      <h4>{title}</h4>
+      <h4>{Author}</h4>
     </article>
   );
 };

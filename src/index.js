@@ -69,7 +69,12 @@ const Book = ({ image, title, Author }) => {
     console.log(Author);
   };
   return (
-    <article className="book-item">
+    <article
+      className="book-item"
+      onMouseOver={() => {
+        console.log(title);
+      }}
+    >
       <img
         src={image}
         alt="coverbook"

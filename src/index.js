@@ -60,6 +60,14 @@ const BookList = () => {
 };
 
 const Book = ({ image, title, Author }) => {
+  // attribute, eventHandler
+  // onClick, onMouseOver
+  const clickHandler = () => {
+    alert("hello World:");
+  };
+  const moreComplexHandler = (Author) => {
+    console.log(Author);
+  };
   return (
     <article className="book-item">
       <img
@@ -74,6 +82,12 @@ const Book = ({ image, title, Author }) => {
       />
       <h4>{title}</h4>
       <h4>{Author}</h4>
+      <button type="button" onClick={clickHandler}>
+        click
+      </button>
+      <button type="button" onClick={() => moreComplexHandler(Author)}>
+        more complex examples
+      </button>
     </article>
   );
 };
